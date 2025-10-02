@@ -1,16 +1,24 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        // Opretter Customer instanser
-        Customer customer1 = new Customer("John", "Doe", "johndoe123");
-        Customer customer2 = new Customer("Jane", "Smith", "janesmith456");
-        Customer customer3 = new Customer("Bob", "Johnson", "bobjohnson789");
+        // Opretter en ArrayList kaldet 'customers'
+        ArrayList<Customer> customers = new ArrayList<>();
 
-        // Printer customers
-        System.out.println(customer1.toString());
-        System.out.println(customer2.toString());
-        System.out.println(customer3.toString());
+        // Opretter Customer instanser og tilføjer dem til listen
+        customers.add(new Customer("John", "Doe", "johndoe123"));
+        customers.add(new Customer("Jane", "Smith", "janesmith456"));
+        customers.add(new Customer("Bob", "Johnson", "bobjohnson789"));
 
-        // Viser counter
-        System.out.println("Total customers created: " + Customer.getCounter());
+        // Kalder printCustomers metoden med customers som argument
+        printCustomers(customers);
+    }
+
+    // 1.f - Static metode til at printe alle customers
+    public static void printCustomers(ArrayList<Customer> customers) {
+        // For each loop der gennemløber alle customers
+        for (Customer customer : customers) {
+            System.out.println(customer);
+        }
     }
 }
